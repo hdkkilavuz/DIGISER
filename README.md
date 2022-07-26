@@ -82,6 +82,12 @@ DOI:
 10.1016/j.electstud.2016.07.002 (https://www.doi.org/10.1016/j.electstud.2016.07.002)
 [ presentation of methodological design and operationalization ]  
 
-[2] https://ec.europa.eu/eurostat/cache/metadata/en/urb_esms.htm  
+[2]
+* Data: https://ec.europa.eu/eurostat/web/cities/data/database
+* Manual: https://ec.europa.eu/eurostat/documents/3859598/8012444/KS-GQ-17-006-EN-N.pdf
 
-[3] https://ec.europa.eu/eurostat/cache/metadata/en/tepsr_sp410_esmsip2.htm
+
+[3] 
+* Map: https://ec.europa.eu/eurostat/databrowser/view/ISOC_SK_DSKL_I21__custom_3013481/default/map?lang=en
+* Data: https://ec.europa.eu/eurostat/databrowser/view/ISOC_SK_DSKL_I21__custom_3013481/default/table?lang=en
+
