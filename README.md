@@ -9,7 +9,7 @@ Even in 2022, digitalization is not fully here yet.
 
 Many european cities has an overall low level of digital skills in the public sector with respect to other cities.  
 
-The aim of the project is helping stakeholders an policy makers in making decisions on best-possible actions to boost digital transformation of local public services in the European Union.
+The aim of the project is helping stakeholders and policy makers in making decisions on best-possible actions to boost digital transformation of local public services in the European Union.
 Moreover, using not only data about the public sector but also socioeconomics data, political data, and the distribution of individual digital skills, the research aims to find some influence of these factors with respect to the digitalization.  
 
 ## Data
