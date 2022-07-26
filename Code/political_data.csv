@@ -1,0 +1,34 @@
+CCode,country_name_short,country_name,election_type,election_date,vote_share,seats,seats_total,party_name_short,party_name,party_name_english,left_right,country_id,election_id,previous_parliament_election_id,previous_cabinet_id,party_id,party_family
+AT,AUT,Austria,parliament,29/09/2019,37.5,71,183,OVP,Österreichische Volkspartei,Austrian People's Party,6.4733,59,1080,1019,1600,1013,Christian democracy
+BE,BEL,Belgium,parliament,26/05/2019,16.03,25,150,N-VA,Nieuw-Vlaamse Alliantie,New Flemish Alliance,6.5321,64,1048,816,1586,501,Conservative
+BG,BGR,Bulgaria,ep,26/05/2019,31.07,6,17,GERB,Grazhdani za Evropeysko Razvitie na Balgariya,Citizens for European Development of Bulgaria,8.8,10,1059,1011,1505,1541,Right-wing
+CH,CHE,Switzerland,parliament,20/10/2019,25.59,53,200,SVP-UDC,Schweizerische Volkspartei – Union Démocratique du Centre,Swiss People's Party,7.3575,40,1083,995,1212,750,Agrarian
+CY,CYP,Cyprus,parliament,30/05/2021,27.77,17,56,DISY,Dimokratikós Sinayermós,Democratic Rally,8.6842,51,1095,1004,1628,1575,Conservative
+CZ,CZE,Czech Republic,parliament,09/10/2021,27.79,71,200,ODS,Občanská demokratická strana,Civic Democratic Party,7.3637,68,1099,1020,1534,829,Conservative
+DE,DEU,Germany,parliament,26/09/2021,25.74,206,736,SPD,Sozialdemokratische Partei Deutschlands,Social Democratic Party of Germany,3.6451,54,1096,1016,1528,558,Social democracy
+DK,DNK,Denmark,parliament,05/06/2019,25.9,48,179,Sd,Socialdemokraterne,Social Democrats,3.8011,21,1077,976,1497,1629,Social democracy
+ES,ESP,Spain,parliament,10/11/2019,28,120,350,PSOE,Partido Socialista Obrero Español,Spanish Socialist Workers Party,3.7377,27,1085,1046,1601,902,Social democracy
+EE,EST,Estonia,ep,26/05/2019,26.2,2,6,ERe,Eesti Reformierakond,Estonian Reform Party,7.8969,75,1056,1044,1595,113,Liberal
+FI,FIN,Finland,ep,26/05/2019,20.8,3,13,KOK,Kansallinen Kokoomus – Samlingspartiet,National Coalition Party,7.2451,67,1050,1045,1510,1118,Conservative
+FR,FRA,France,ep,26/05/2019,23.34,22,74,FN,Front national,National Front,9.6854,43,1054,1014,1509,270,Right-wing
+GB,GBR,United Kingdom,parliament,12/12/2019,43.63,365,650,Con,Conservatives,Conservatives,7.4261,44,1086,1013,1599,773,Conservative
+EL,GRC,Greece,parliament,07/07/2019,39.85,158,300,ND,Néa Đimokratía,New Democracy,6.7365,41,1078,992,1593,47,Christian democracy
+HR,HRV,Croatia,parliament,05/07/2020,35.77,66,151,HDZ,Hrvatska demokratska zajednica,Croatian Democratic Union,7.1053,62,1094,1007,1512,276,Christian democracy
+HU,HUN,Hungary,ep,26/05/2019,52.56,,21,Fi+KDNP,Fidesz – Magyar Polgári Szövetség / Kereszténydemokrata Néppárt,Fidesz -- Hungarian Civic Party / Christian Democratic People's Party,6.5432,39,1076,1023,1531,437,Conservative
+IE,IRL,Ireland,parliament,08/02/2020,24.53,37,160,SF,Sinn Féin,Sinn Fein,2.7935,37,1088,1002,1511,2217,Communist/Socialist
+IS,ISL,Iceland,parliament,25/09/2021,24.4,16,63,Sj,Sjálfstæðisflokkurinn,Independence Party,7.4854,56,1105,1021,1524,1342,Conservative
+IT,ITA,Italy,ep,26/05/2019,34.26,28,73,LN,Lega Nord,North League,7.8007,26,1053,1024,1532,1436,Right-wing
+LT,LTU,Lithuania,parliament,11/10/2020,25.77,50,141,TS-LK,Tėvynės sąjunga,Homeland Union,7.4004,15,1091,1009,1615,1045,Conservative
+LU,LUX,Luxembourg,ep,26/05/2019,21.44,2,6,DP,Demokratesch Partei,Democratic Party,6.5789,7,1065,1043,1588,967,Liberal
+LV,LVA,Latvia,ep,25/05/2019,26.24,2,8,V,Vienotība,Unity,7.4,55,1063,1042,1592,1666,Conservative
+MT,MLT,Malta,ep,25/05/2019,54.29,4,6,PL,Partit Laburista,Malta Labour Party,4.2105,72,1066,1010,1504,1003,Social democracy
+NL,NLD,Netherlands,parliament,17/03/2021,21.87,34,150,VVD,Volkspartij voor Vrijheid en Democratie,People's Party for Freedom and Democracy,7.3482,8,1097,1012,1648,1409,Liberal
+NO,NOR,Norway,parliament,13/09/2021,26.3,48,169,DNA,Det norske Arbeiderparti,Norwegian Labour Party,3.3706,9,1104,1017,1617,104,Social democracy
+PL,POL,Poland,parliament,13/10/2019,43.59,235,460,PiS,Prawo i Sprawiedliwość,Law and Justice,7.6997,74,1082,996,1526,528,Conservative
+PT,PRT,Portugal,parliament,06/10/2019,38.21,108,230,PS,Partido Socialista,Socialist Party,4.0492,63,1081,993,1198,725,Social democracy
+RO,ROU,Romania,parliament,06/12/2020,28.9,110,330,PSD,Partidul Social Democrat,Social Democratic Party,3.2325,23,1093,1015,1626,1120,Social democracy
+SK,SVK,Slovakia,parliament,29/02/2020,25.02,53,150,OLaNO,Obyčajní ľudia a nezávislé osobnosti,Ordinary People and Independent,7.4,1,1089,1003,1529,1759,Conservative
+SI,SVN,Slovenia,ep,26/05/2019,26.25,3,8,SDS,Slovenska demokratska stranka,Slovenian Democratic Party,6.9996,60,1071,1025,1555,179,Christian democracy
+SE,SWE,Sweden,ep,26/05/2019,23.48,5,20,SAP,Socialdemokraterna,Social Democrats,3.4447,35,1073,1041,1590,904,Social democracy
+TR,,,,,,,,,,,,,,,,,Conservative
+AL,,,,,,,,,,,,,,,,,Communist/Socialist

@@ -1,0 +1,174 @@
+---
+title: "additional data corr"
+output: html_document
+date: '2022-07-17'
+---
+
+Putting together dataset without NAs
+```{r}
+library(tidyr)
+library(ggcorrplot)
+library(ggpubr)
+library(dplyr)
+setwd("C:/Users/William/OneDrive - NTNU/Documents/FYSMAT/Applied statistics/DigiserData")
+data <- read.csv("indices2.csv", head=T, sep = ";", encoding="UTF-8",)
+vars <- read.csv("eurostat/data/01_socioeconomic_data.csv", head=T, sep = ",", encoding="UTF-8",)
+```
+
+```{r}
+vars_1 <- subset( vars, select = -X )
+```
+
+```{r}
+df <- reshape(vars_1, idvar = "cities", timevar = "variables", direction = "wide")
+```
+
+```{r}
+names(df)[names(df) == 'cities'] <- 'City_Code'
+```
+
+```{r}
+df_merge <- merge(data, df, by ="City_Code", all.x = TRUE)
+```
+
+To remove columns/rows such that we keep the most cities.
+Create some funcs for this
+```{r functions}
+ratiobars_cols <- function(df) {
+  nas <- rep(1,ncol(df))
+    for (i in 1:ncol(df)) {
+    nas[i] <- sum(is.na(df[,i]))
+  }
+  nas <- nas/nrow(df_complete)
+  barplot(nas, ylim=c(0,1))
+ return(nas)
+}
+
+ratiobars_rows <- function(dataframe) {
+  nas <- rep(1,nrow(dataframe))
+  for (i in 1:nrow(dataframe)) {
+    nas[i] <- sum(is.na(dataframe[i,]))
+  }
+  nas <- nas/ncol(dataframe)
+  bars <- barplot(nas, ylim=c(0,1))
+  return(list(rat = nas, plot =bars))
+}
+
+```
+Plots are just for confirming that removal works, dont mind them.
+
+
+```{r try2}
+df_complete <- df_merge[,-c(1,2,4)]
+#Remove variables, leave indicators
+df_I <- df_complete %>% select(-contains(c("0V","1V","2V","3V","4V","5V","6V","7V","8V","9V")))
+
+#dataset wo populations
+#df_I <- df_I %>% select(-contains(c("DE1")))
+
+
+a <- ratiobars_cols(df_I)
+removeidx <- which(a >0.4)
+df_I_clean <- df_I[,-removeidx]
+
+
+
+a <- ratiobars_rows(df_I_clean)
+removeidx <- which(a$rat >0.0001)
+df_I_clean <- df_I_clean[-removeidx,]
+ratiobars_rows(df_I_clean)
+
+
+
+
+ratiobars_cols(df_I_clean)
+ratiobars_rows(df_I_clean)
+```
+
+Remove characters from numericals
+```{r polishing fd_i}
+df_rdy <- df_I_clean[,-1]
+
+
+df_mat <- data.frame(lapply(df_rdy, function(x) {
+  gsub("e","",x)
+}))
+df_mat <- data.frame(lapply(df_mat, function(x) {
+  gsub("d","",x)
+}))
+df_mat <- data.frame(lapply(df_mat, function(x) {
+  gsub("p","",x)
+}))
+df_mat <- data.frame(lapply(df_mat, function(x) {
+  gsub("b","",x)
+}))
+
+
+```
+
+
+```{r more polish}
+df_ordered <- df_mat[names(df_rdy)]
+
+#remove more covariates
+
+df_num <- data.frame(sapply(df_ordered, as.numeric))
+removes <- which(colSums(is.na(df_num))>0)
+df_num <- df_num[,-removes]
+#check for nas
+which(colSums(is.na(df_num))>0)
+which(rowSums(is.na(df_num))>0)
+```
+
+
+Create a nice(readable) pdf, saved in working directory
+```{r corrplot 2}
+corr <- cor(df_num)
+pdf("corrdeletepls.pdf", width = 20, height = 20)
+ggcorrplot(corr)
+dev.off()
+```
+
+
+```{r actual corrs}
+Inds <- corr[31,32:54]
+pos <- Inds >0.1
+Inds[pos]
+
+neg <- Inds < -0.1
+Inds[neg]
+```
+
+
+
+POSITIVE CORRELATION WITH DPSVI
+DE1085? = 0.20
+DE1084? = 0.26
+DE1073(Median pop age) = 0.19
+DE1061(pop 35-44 tot) = 0.16
+DE1059(pop 35-44 male) = 0.21
+DE1049(pop 20-24 tot) = 0.12
+DE1040(pop 0-4 tot) = 0.21
+DE3002(one person households) = 0.23
+EC1003(Economic active pop female) = 0.4
+EC1002(Economic active pop male) = 0.28
+
+
+
+NEGATIVE CORRELATION WITH DPSVI
+DE1076(pop female 5-9) = -0.12
+DE1060(pop 25-35 female) = -0.12
+DE1028(pop 65-74 tot) = -0.21
+DE1025(pop 55-64 tot) = -0.33
+
+
+
+Thus, a city with high active economic population is correlated with high digitalization. Looks like it is especially important that the female are economically active.
+
+Young populations are more likely to live in cities with higher digitization.
+
+Cities with lower digitalization seems to have more women of age 25-35 and 5-9. Maybe it is linked to pregnancy? 
+
+A last point is that cities with more one person households have a higher degree of digitalization. This is probably a result of young people living like this.
+
+

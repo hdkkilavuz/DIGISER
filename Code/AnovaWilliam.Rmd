@@ -1,0 +1,100 @@
+---
+title: "ANOVA"
+output:
+  html_document: default
+  pdf_document: default
+date: '2022-05-29'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r imports, include=FALSE}
+library(tidyr)
+library(ggcorrplot)
+library(ggpubr)
+library(dplyr)
+library(ggplot2)
+library(tidytext)
+```
+
+```{r dataset, include = FALSE}
+setwd("C:/Users/William/OneDrive - NTNU/Documents/FYSMAT/Applied statistics/DigiserData")
+df <- read.csv("indices.csv", head=T, sep = ";")
+df <- df[,-c(1,4)] #remove first bs index
+df <- df[-217,] #remove "innovations" row
+
+
+# Dividing data into the four different levels
+lvl0 <- df %>%
+  select(names(df)[nchar(names(df))>7 & nchar(names(df))<9])
+
+lvl1 <- df %>%
+  select(names(df)[nchar(names(df))>5 & nchar(names(df))<7])
+
+lvl2 <- df %>%
+  select(names(df)[nchar(names(df))>2 & nchar(names(df))<5])
+
+lvl3 <- df %>%
+  select(names(df)[nchar(names(df))>1 & nchar(names(df))<3])
+
+#create a df with only DPSVI and country
+df_idx_full <- data.frame(country =df$country, DPSVI = df$DPSVI)
+df_idx <- 
+  df_idx_full %>% group_by(country) %>% filter(n()>1)
+
+```
+
+Start of with test of normaility
+```{r normality}
+shapiro.test(df$DPSVI)
+```
+Do not reject normality of DPSVI distribution (p=0.95)
+
+
+Do a test for homoscedasticity.
+```{r Bartletts test}
+barTest <- bartlett.test(DPSVI ~ country, data = df_idx)
+barTest
+```
+
+
+After doing Bartletts test we assume equal variance between countries, and we can now do anova.
+Anova: is there a difference in the mean of DPSVI of the countries.
+```{r ANOVA}
+aov <- aov(df$DPSVI ~ country, data = df)
+summary(aov)
+```
+Anova reject null hypothesis of equal means between countries(as expected).
+
+
+
+Find variance in DPSVI in each country(only looking at countries with more than 1 observation ofc => we need to remove 3 observations).
+```{r label, options}
+#split data by country, then apply empircal variance function on each grouo
+split_country <- split(df_idx, df_idx$country)
+res <- lapply(split_country, function(x){data.frame(var = var(x$DPSVI))}) 
+
+#Fit result in a data frame
+res <- do.call(rbind,res)
+df_var <- data.frame(country=rownames(res), DPSVI = res$var)
+
+#Plot Result
+ggplot(df_var, aes(reorder(country, DPSVI), DPSVI)) +
+  geom_col() +
+  theme(axis.text.x=element_text(angle=40,hjust=1,vjust=0.5))
+  
+```
+
+
+
+
+
+
+
+
+
+
+
+
