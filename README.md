@@ -82,8 +82,6 @@ DOI:
 10.1016/j.electstud.2016.07.002 (https://www.doi.org/10.1016/j.electstud.2016.07.002)
 [ presentation of methodological design and operationalization ]  
 
-[2]
-* https://ec.europa.eu/eurostat/cache/metadata/en/urb_esms.htm  
+[2] https://ec.europa.eu/eurostat/cache/metadata/en/urb_esms.htm  
 
-[3]
-* https://ec.europa.eu/eurostat/cache/metadata/en/tepsr_sp410_esmsip2.htm
+[3] https://ec.europa.eu/eurostat/cache/metadata/en/tepsr_sp410_esmsip2.htm
