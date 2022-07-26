@@ -1,6 +1,9 @@
 # Beyond DIGISER - An analysis of public sector digitalization in European cities and its correlates
 This project has been designed by me and my team for the final research project of the Applied Statistics course of the Master's Degree in Computer Science and Engineering at Politecnico di Milano. The team was composed by me, Maite Siebel, William Rom, Hatice Deniz Temurtas and Melis Yilmaz.  
 
+It is possible to visualize the code in the related folder, as well as the final poster of the results.  
+
+
 ## Motivations
 Even in 2022, digitalization is not fully here yet.
 
