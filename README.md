@@ -72,7 +72,7 @@ Clustering on bureaucratics variables has been made. The aim is finding any inte
 This section focuses in finding any interesting correlation between socioeconomic aspects of the countries and the digitalization in the public sector.  
 
 ### ANOVA on individual digital skills
-Studing the variance of each population of cities with different number of individuals with basic digital skills, it is possible to understand if the the digital skills of the individuals has an influence of the digitalization of a country. 
+By studing the variance of each population of cities with different number of individuals with basic digital skills, it is possible to understand if the the digital skills of the individuals has an influence of the digitalization of a country. 
 
 ## References
 [1] 
